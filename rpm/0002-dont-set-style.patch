@@ -1,0 +1,15 @@
+diff --git a/src/main.cpp b/src/main.cpp
+index 995b1dbd..9997b0dd 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -127,8 +127,8 @@ int main(int argc, char *argv[])
+ #if defined Q_OS_ANDROID
+     QQuickStyle::setStyle(QStringLiteral("Material"));
+ #else
+-    QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+-    QQuickStyle::setFallbackStyle(QStringLiteral("Fusion"));
++//    QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
++//    QQuickStyle::setFallbackStyle(QStringLiteral("Fusion"));
+ #endif
+ 
+     QQmlApplicationEngine engine;

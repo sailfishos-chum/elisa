@@ -9,7 +9,7 @@ License:    LGPLv3+ and CC-BY-SA
 URL:        https://community.kde.org/Elisa
 Source0:    %{name}-%{version}.tar.xz
 Patch0:     0001-desktop-qtrunner.patch
-Patch1:     0002-use-breeze-style.patch
+Patch1:     0002-dont-set-style.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  cmake
