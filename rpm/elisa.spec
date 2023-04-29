@@ -50,6 +50,22 @@ Requires:       opt-kf5-kio-gui
 %description
 Elisa is a simple music player aiming to provide a nice experience for its
 users.
+%if 0%{?_chum}
+PackageName: Elisa
+Type: desktop-application
+DeveloperName: KDE Project
+PackagerName: Adam Pigg
+Categories:
+ - Audio
+Custom:
+  Repo: https://invent.kde.org/multimedia/elisa
+  PackagingRepo: https://github.com/sailfishos-chum/elisa
+Icon: https://raw.githubusercontent.com/sailfishos-chum/elisa/main/logo.png
+Screenshots:
+ - https://raw.githubusercontent.com/sailfishos-chum/elisa/main/screenshot-1.png
+ - https://raw.githubusercontent.com/sailfishos-chum/elisa/main/screenshot-2.png
+ - https://raw.githubusercontent.com/sailfishos-chum/elisa/main/screenshot-3.png
+%endif
 
 %prep
 %autosetup -n %{name}-%{version}/upstream -p1
