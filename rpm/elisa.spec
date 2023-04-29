@@ -8,6 +8,7 @@ Summary:    Elisa music player
 License:    LGPLv3+ and CC-BY-SA
 URL:        https://community.kde.org/Elisa
 Source0:    %{name}-%{version}.tar.xz
+Patch0:     0001-desktop-qtrunner.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  cmake

@@ -1,0 +1,23 @@
+diff --git a/org.kde.elisa.desktop.cmake b/org.kde.elisa.desktop.cmake
+index f30a5b2a..9c3390f3 100644
+--- a/org.kde.elisa.desktop.cmake
++++ b/org.kde.elisa.desktop.cmake
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Categories=Qt;KDE;Audio;AudioVideo
+ Comment=
+-Exec=elisa %U
++Exec=qt-runner elisa %U
+ GenericName=Music Player
+ GenericName[ar]=مشغّل صوتي إليسّا
+ GenericName[az]=Musiqi Pleyeri
+@@ -96,3 +96,9 @@ Type=Application
+ MimeType=audio/aac;audio/mp4;audio/mpeg;audio/mpegurl;audio/vnd.rn-realaudio;audio/vorbis;audio/x-flac;audio/x-mp3;audio/x-mpegurl;audio/x-ms-wma;audio/x-musepack;audio/x-oggflac;audio/x-pn-realaudio;audio/x-scpls;audio/x-speex;audio/x-vorbis;audio/x-wav;application/x-ogm-audio;audio/x-vorbis+ogg;audio/ogg;
+ SingleMainWindow=true
+ @ELISA_DBUSACTIVATABLE@
++X-Nemo-Single-Instance=no
++X-Nemo-Application-Type=no-invoker
++
++[X-Sailjail]
++Sandboxing=Disabled
++
