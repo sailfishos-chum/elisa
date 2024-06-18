@@ -1,5 +1,5 @@
 Name:       elisa
-Version:    23.04.0
+Version:    23.08.5
 Release:    1
 Summary:    Elisa music player
 
