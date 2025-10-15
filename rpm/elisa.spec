@@ -13,40 +13,39 @@ Patch1:     0002-dont-set-style.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  cmake
-BuildRequires:  opt-extra-cmake-modules
+BuildRequires:  kf6-extra-cmake-modules
 BuildRequires:  desktop-file-utils
-BuildRequires:  opt-qt5-qtbase-devel
-BuildRequires:  opt-qt5-qtdeclarative-devel
-BuildRequires:  opt-qt5-qtmultimedia-devel
-BuildRequires:  opt-qt5-qtsvg-devel
-BuildRequires:  opt-qt5-qtquickcontrols2-devel
-BuildRequires:  opt-kf5-ki18n-devel
-BuildRequires:  opt-kf5-kconfig-devel
-BuildRequires:  opt-kf5-kio-devel
-BuildRequires:  opt-kf5-kcoreaddons-devel
-BuildRequires:  opt-kf5-kxmlgui-devel
-BuildRequires:  opt-kf5-kcrash-devel
-BuildRequires:  opt-kf5-kdbusaddons-devel
-BuildRequires:  opt-kf5-kirigami2-devel
-BuildRequires:  opt-kf5-kconfigwidgets-devel
-BuildRequires:  opt-kf5-rpm-macros
-BuildRequires:  opt-kf5-kiconthemes-devel
-BuildRequires:  opt-kf5-kio-widgets-libs
-BuildRequires:  opt-kf5-kfilemetadata-devel
+BuildRequires:  qt6-qtbase-devel
+BuildRequires:  qt6-qtdeclarative-devel
+BuildRequires:  qt6-qtmultimedia-devel
+BuildRequires:  qt6-qtsvg-devel
+BuildRequires:  qt6-qtquickcontrols2-devel
+BuildRequires:  kf6-ki18n-devel
+BuildRequires:  kf6-kconfig-devel
+BuildRequires:  kf6-kio-devel
+BuildRequires:  kf6-kcoreaddons-devel
+BuildRequires:  kf6-kxmlgui-devel
+BuildRequires:  kf6-kcrash-devel
+BuildRequires:  kf6-kdbusaddons-devel
+BuildRequires:  kf6-kirigami2-devel
+BuildRequires:  kf6-kconfigwidgets-devel
+BuildRequires:  kf6-rpm-macros
+BuildRequires:  kf6-kiconthemes-devel
+BuildRequires:  kf6-kio-widgets-libs
+BuildRequires:  kf6-kfilemetadata-devel
 
-Requires:       qt-runner
-Requires:       opt-kf5-kirigami2
-Requires:       opt-kf5-kcrash
-Requires:       opt-kf5-kiconthemes
-Requires:       opt-kf5-kio-widgets-libs
-Requires:       opt-kf5-kfilemetadata
-Requires:       opt-kf5-kdbusaddons
-Requires:       opt-kf5-kxmlgui
-Requires:       opt-kf5-kio-file-widgets
-Requires:       opt-kf5-kio-gui
+Requires:       qt-runner-qt6
+Requires:       kf6-kirigami2
+Requires:       kf6-kcrash
+Requires:       kf6-kiconthemes
+Requires:       kf6-kio-widgets-libs
+Requires:       kf6-kfilemetadata
+Requires:       kf6-kdbusaddons
+Requires:       kf6-kxmlgui
+Requires:       kf6-kio-file-widgets
+Requires:       kf6-kio-gui
 
 %global __requires_exclude ^libelisaLib.*$|
-%{?opt_kf5_default_filter}
 
 %description
 Elisa is a simple music player aiming to provide a nice experience for its
@@ -72,10 +71,7 @@ Screenshots:
 %autosetup -n %{name}-%{version}/upstream -p1
 
 %build
-export QTDIR=%{_opt_qt5_prefix}
-touch .git
-
-%_opt_cmake_kf5 \
+%cmake_kf6 \
 		-DKDE_INSTALL_BINDIR:PATH=/usr/bin \
 		-DCMAKE_INSTALL_PREFIX:PATH=/usr/
 %cmake_build
@@ -89,8 +85,8 @@ touch .git
 %{_datadir}/applications/org.kde.elisa.desktop
 %{_datadir}/dbus-1/services/org.kde.elisa.service
 %{_datadir}/icons/hicolor/*/apps/elisa*
-%{_datadir}/qlogging-categories5/elisa.categories
-%{_opt_kf5_metainfodir}/org.kde.elisa.appdata.xml
-%{_opt_qt5_libdir}/elisa/
-%{_opt_qt5_libdir}/qt5/qml/org/kde/elisa/
+%{_datadir}/qlogging-categories6/elisa.categories
+%{_kf6_metainfodir}/org.kde.elisa.appdata.xml
+%{_qt6_libdir}/elisa/
+%{_qt6_libdir}/qt6/qml/org/kde/elisa/
 %{_datadir}/locale/
