@@ -22,20 +22,22 @@ BuildRequires:  qt6-qtsvg-devel
 BuildRequires:  qt6-qtquickcontrols2-devel
 BuildRequires:  kf6-ki18n-devel
 BuildRequires:  kf6-kconfig-devel
-BuildRequires:  kf6-kio-devel
+#BuildRequires:  kf6-kio-devel
 BuildRequires:  kf6-kcoreaddons-devel
 BuildRequires:  kf6-kxmlgui-devel
-BuildRequires:  kf6-kcrash-devel
+#BuildRequires:  kf6-kcrash-devel
 BuildRequires:  kf6-kdbusaddons-devel
-BuildRequires:  kf6-kirigami2-devel
+#BuildRequires:  kf6-kirigami2-devel
+BuildRequires:  kf6-kirigami-devel
 BuildRequires:  kf6-kconfigwidgets-devel
 BuildRequires:  kf6-rpm-macros
 BuildRequires:  kf6-kiconthemes-devel
-BuildRequires:  kf6-kio-widgets-libs
+#BuildRequires:  kf6-kio-widgets-libs
 BuildRequires:  kf6-kfilemetadata-devel
 
 Requires:       qt-runner-qt6
-Requires:       kf6-kirigami2
+#Requires:       kf6-kirigami2
+Requires:       kf6-kirigami
 Requires:       kf6-kcrash
 Requires:       kf6-kiconthemes
 Requires:       kf6-kio-widgets-libs
