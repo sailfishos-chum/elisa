@@ -22,7 +22,7 @@ BuildRequires:  qt6-qtsvg-devel
 BuildRequires:  qt6-qtquickcontrols2-devel
 BuildRequires:  kf6-ki18n-devel
 BuildRequires:  kf6-kconfig-devel
-#BuildRequires:  kf6-kio-devel
+BuildRequires:  kf6-kio-devel
 BuildRequires:  kf6-kcoreaddons-devel
 BuildRequires:  kf6-kxmlgui-devel
 #BuildRequires:  kf6-kcrash-devel
