@@ -81,14 +81,16 @@ Screenshots:
 %install
 %cmake_install
 
-%files
+%find_lang %{name}
+
+%files -f %{name}.lang
 %license COPYING
 %{_bindir}/elisa
 %{_datadir}/applications/org.kde.elisa.desktop
 %{_datadir}/dbus-1/services/org.kde.elisa.service
 %{_datadir}/icons/hicolor/*/apps/elisa*
 %{_datadir}/qlogging-categories6/elisa.categories
-%{_kf6_metainfodir}/org.kde.elisa.appdata.xml
+%exclude %{_kf6_metainfodir}/org.kde.elisa.appdata.xml
 %{_qt6_libdir}/elisa/
-%{_qt6_libdir}/qt6/qml/org/kde/elisa/
-%{_datadir}/locale/
+#%%{_qt6_libdir}/qt6/qml/org/kde/elisa/
+#%%{_datadir}/locale/
