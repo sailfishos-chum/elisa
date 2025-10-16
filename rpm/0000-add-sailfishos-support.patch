@@ -1,0 +1,39 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index cc2540a6..72376104 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -116,7 +116,7 @@ if (NOT WIN32 AND NOT ANDROID)
+         TYPE OPTIONAL)
+ endif()
+ 
+-if (ANDROID)
++if (ANDROID OR SAILFISHOS)
+     find_package(KF6Kirigami ${REQUIRED_KF_VERSION} CONFIG QUIET)
+     set_package_properties(KF6Kirigami PROPERTIES
+         DESCRIPTION "Used to package icons on Android."
+@@ -151,6 +151,10 @@ set_package_properties(LIBVLC PROPERTIES
+ ecm_find_qmlmodule(org.kde.kirigami 2.20)
+ ecm_find_qmlmodule(org.kde.kirigamiaddons.formcard 1.0)
+ 
++if (SAILFISHOS)
++    add_compile_definitions(Q_OS_SAILFISHOS)
++endif()
++
+ include(FeatureSummary)
+ include(GenerateExportHeader)
+ include(ECMSetupVersion)
+diff --git a/src/main.cpp b/src/main.cpp
+index 4cc3c8b8..8847aece 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -150,8 +150,10 @@ int main(int argc, char *argv[])
+         QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
+         QQuickStyle::setFallbackStyle(QStringLiteral("Material"));
+ #else
++#ifndef Q_OS_SAILFISHOS
+         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+         QQuickStyle::setFallbackStyle(QStringLiteral("Fusion"));
++#endif
+ #endif
+     }
+ 

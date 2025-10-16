@@ -8,8 +8,8 @@ Summary:    Elisa music player
 License:    LGPLv3+ and CC-BY-SA
 URL:        https://community.kde.org/Elisa
 Source0:    %{name}-%{version}.tar.xz
-Patch0:     0001-desktop-qtrunner.patch
-Patch1:     0002-dont-set-style.patch
+Patch0:     0000-add-sailfishos-support.patch
+Patch1:     0001-desktop-qtrunner.patch
 
 BuildRequires:  gcc-c++
 BuildRequires:  cmake
@@ -38,13 +38,13 @@ BuildRequires:  kf6-kfilemetadata-devel
 Requires:       qt-runner-qt6
 #Requires:       kf6-kirigami2
 Requires:       kf6-kirigami
-Requires:       kf6-kcrash
+#Requires:       kf6-kcrash
 Requires:       kf6-kiconthemes
-Requires:       kf6-kio-widgets-libs
+#Requires:       kf6-kio-widgets-libs
 Requires:       kf6-kfilemetadata
 Requires:       kf6-kdbusaddons
 Requires:       kf6-kxmlgui
-Requires:       kf6-kio-file-widgets
+#Requires:       kf6-kio-file-widgets
 Requires:       kf6-kio-gui
 
 %global __requires_exclude ^libelisaLib.*$|
@@ -75,7 +75,10 @@ Screenshots:
 %build
 %cmake_kf6 \
 		-DKDE_INSTALL_BINDIR:PATH=/usr/bin \
-		-DCMAKE_INSTALL_PREFIX:PATH=/usr/
+		-DCMAKE_INSTALL_PREFIX:PATH=/usr/ \
+		-DSAILFISHOS=ON \
+		%{nil}
+
 %cmake_build
 
 %install
