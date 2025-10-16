@@ -36,6 +36,7 @@ BuildRequires:  kf6-kiconthemes-devel
 BuildRequires:  kf6-kfilemetadata-devel
 
 Requires:       qt-runner-qt6
+Requires:       qt6-qt5compat
 #Requires:       kf6-kirigami2
 Requires:       kf6-kirigami
 #Requires:       kf6-kcrash
